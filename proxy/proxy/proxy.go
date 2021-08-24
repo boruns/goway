@@ -87,6 +87,7 @@ func NewMultipleHostReverseProxy(c *middleware.SliceRouterContext, targets []*ur
 		resp.Body = ioutil.NopCloser(bytes.NewBuffer(payload))
 		resp.ContentLength = int64(len(payload))
 		resp.Header.Set("Content-Length", strconv.FormatInt(int64(len(payload)), 10))
+		resp.Header.Set("Access-Token", "123456")
 		return nil
 	}
 
