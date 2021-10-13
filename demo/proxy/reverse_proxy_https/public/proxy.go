@@ -69,7 +69,7 @@ func NewMultipleHostsReverseProxy(targets []*url.URL) *httputil.ReverseProxy {
 		return nil
 	}
 
-	http2.ConfigureTransport(transport) //升级为https反向代理
+	http2.ConfigureTransport(transport) //升级为h2
 	return &httputil.ReverseProxy{Director: director, Transport: transport, ModifyResponse: modifyResponse}
 }
 
