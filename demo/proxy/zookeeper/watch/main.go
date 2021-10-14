@@ -13,7 +13,7 @@ var addr = []string{"159.75.81.114:2181"}
 
 func main() {
 	zkManager := zookeeper.NewZkManager(addr)
-	zkManager.GetConnect()
+	// zkManager.GetConnect()
 	defer zkManager.Close()
 
 	// zlist, err := zkManager.GetServerListByPath("/real_server")

@@ -10,3 +10,10 @@ type LoadBalanceConf interface {
 	WatchConf()
 	UpdateConf([]string)
 }
+
+type LoadBalanceZkConf struct {
+	observers      []Observer
+	path           string
+	zkHosts        []string
+	configIdWeight map[string]string
+}

@@ -8,7 +8,7 @@ import (
 
 func main() {
 	zkManager := zookeeper.NewZkManager([]string{"159.75.81.114:2181"})
-	zkManager.GetConnect()
+	// zkManager.GetConnect()
 	defer zkManager.Close()
 
 	i := 0

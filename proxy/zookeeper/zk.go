@@ -14,18 +14,23 @@ type ZkManager struct {
 }
 
 func NewZkManager(hosts []string) *ZkManager {
-	return &ZkManager{hosts: hosts, pathPrefix: "/gateway_servers_"}
+	conn, _, err := zk.Connect(hosts, 5*time.Second)
+	if err != nil {
+		return nil
+	}
+
+	return &ZkManager{hosts: hosts, pathPrefix: "/gateway_servers_", conn: conn}
 }
 
 //连接zk服务器
-func (z *ZkManager) GetConnect() error {
-	conn, _, err := zk.Connect(z.hosts, 5*time.Second)
-	if err != nil {
-		return err
-	}
-	z.conn = conn
-	return nil
-}
+// func (z *ZkManager) GetConnect() error {
+// 	conn, _, err := zk.Connect(z.hosts, 5*time.Second)
+// 	if err != nil {
+// 		return err
+// 	}
+// 	z.conn = conn
+// 	return nil
+// }
 
 //关闭服务
 func (z *ZkManager) Close() {
