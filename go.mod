@@ -8,7 +8,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/gorilla/websocket v1.4.2
 	github.com/kisielk/gotool v1.0.0 // indirect
-	github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414 // indirect
+	github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414
 	golang.org/x/net v0.0.0-20211011170408-caeb26a5c8c0
 	golang.org/x/sys v0.0.0-20211007075335-d3039528d8ac // indirect
 	golang.org/x/text v0.3.7 // indirect
